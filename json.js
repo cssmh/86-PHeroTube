@@ -26,8 +26,19 @@ const singleOne = async (video) => {
   const soloData = data.data;
   console.log(soloData);
 
+  // Oops!! Sorry, There is no content here part
+  const hiddenId = document.getElementById("hidden-video")
+  if(soloData.length === 0){
+    hiddenId.classList.remove("hidden")
+  }
+  else{
+    hiddenId.classList.add("hidden")
+  }
+  // Oops!! Sorry, There is no content here part end
+
   const containerSolo = document.getElementById("cards-container");
   containerSolo.innerHTML = "";
+  
   soloData.forEach((video) => {
     // console.log(video);
     const div = document.createElement("div");
