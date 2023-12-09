@@ -54,7 +54,10 @@ const singleOne = async (video) => {
                               </div>
                               <div class="gap-2">
                                   <h2 class="font-bold">${video.title}</h2>
-                                  <p class="text-gray-600">${video.authors[0]?.profile_name}</p>
+                                  <div class="flex">
+                                     <p class="text-gray-600">${video.authors[0]?.profile_name}</p>
+                                     <p><img class="w-4" src="./verified.png" alt=""></p>
+                                  </div>
                                   <p class="text-gray-600">${video.others?.views} views</p>
                               </div>
                             </div>
@@ -64,6 +67,6 @@ const singleOne = async (video) => {
     containerSolo.appendChild(div);
   });
 };
-
+// w-[20px] mt-[4px]
 singleOne(1000);
 handleTube();
