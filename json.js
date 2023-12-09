@@ -56,7 +56,7 @@ const singleOne = async (video) => {
     div.innerHTML = `
       <div class="card card-compact bg-base-100 shadow-xl">
                         <figure><img class="relative h-[200px] w-full rounded-md" src="${video.thumbnail}" alt="" /></figure>
-                         ${hoursValue? '<p id="output" class="bg-black text-white p-2 text-center w-30% absolute bottom-16 mb-9 right-0 m-2 rounded">' + result : '' + '</p>'}
+                         ${hoursValue? '<p id="output" class="bg-black text-white p-2 text-center w-30% absolute bottom-16 mb-9 right-0 m-2 rounded">' + result + '</p>' : '' }
                         <div class="card-body">
                             <div class="flex gap-3">
                               <div class="avatar">
