@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog answer</title>
+    <link rel="icon" href="./Logo.png">
+    <style>
+        body {
+            background-color: burlywood;
+            font-family: Arial, sans-serif;
+            max-width: 1080px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, "Courier New", monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Scope of <code>var</code>, <code>let</code>, and <code>const</code></h1>
+
+    <p>In JavaScript, the scope of variables is an important concept. The keywords <code>var</code>, <code>let</code>,
+        and <code>const</code> are used for variable declaration, and they differ in terms of scope, hoisting, and
+        reassignment.</p>
+
+    <h2><code>var</code></h2>
+    <p><code>var</code> is function-scoped. It is hoisted to the top of its function and can be redeclared and
+        reassigned.</p>
+
+    <pre>
+    <code>
+function example() {
+  var x = 1;
+  if (true) {
+    var x = 2; // Same variable as above
+    console.log(x); // Outputs 2
+  }
+  console.log(x); // Outputs 2
+}
+    </code>
+  </pre>
+
+    <h2><code>let</code></h2>
+    <p><code>let</code> is block-scoped. It is hoisted to the top of its block and can be reassigned but not redeclared
+        in the same scope.</p>
+
+    <pre>
+    <code>
+function example() {
+  let y = 1;
+  if (true) {
+    let y = 2; // Different variable than the one outside the block
+    console.log(y); // Outputs 2
+  }
+  console.log(y); // Outputs 1
+}
+    </code>
+  </pre>
+
+    <h2><code>const</code></h2>
+    <p><code>const</code> is also block-scoped. It cannot be redeclared or reassigned, but for objects and arrays, their
+        properties or elements can be modified.</p>
+
+    <pre>
+    <code>
+function example() {
+  const z = 1;
+  if (true) {
+    const z = 2; // Different variable than the one outside the block
+    console.log(z); // Outputs 2
+  }
+  console.log(z); // Outputs 1
+}
+    </code>
+  </pre>
+    <section>
+        <h1>Use Cases of <code>null</code> and <code>undefined</code></h1>
+
+        <h2><code>null</code></h2>
+        <p>The value <code>null</code> represents the intentional absence of any object value or the absence of a value
+            itself. It is often used in the following scenarios:</p>
+
+        <ul>
+            <li><strong>Explicitly Indicating Absence:</strong> You can assign <code>null</code> to a variable or
+                property to explicitly indicate that it has no value or is intentionally empty.</li>
+            <li><strong>Resetting Values:</strong> It can be used to reset or clear the value of a variable or object
+                property.</li>
+            <li><strong>As a Placeholder:</strong> Sometimes <code>null</code> is used as a placeholder when a value is
+                expected but not yet available or applicable.</li>
+        </ul>
+
+        <h2><code>undefined</code></h2>
+        <p>The value <code>undefined</code> represents the uninitialized state of a variable or the absence of a value
+            in a property. It is commonly encountered in the following situations:</p>
+
+        <ul>
+            <li><strong>Uninitialized Variables:</strong> Variables that are declared but not assigned a value are by
+                default set to <code>undefined</code>.</li>
+            <li><strong>Function Parameters:</strong> If a function is called with fewer arguments than declared
+                parameters, the missing parameters will have a value of <code>undefined</code>.</li>
+            <li><strong>Object Properties:</strong> If you access an object property that does not exist, the result is
+                <code>undefined</code>.</li>
+        </ul>
+
+        <p>Example:</p>
+
+        <pre>
+    <code>
+// Using null
+let user = null; // Explicitly indicating absence
+
+// Using undefined
+let age; // Uninitialized variable, set to undefined
+function example(parameter) {
+  console.log(parameter); // If no argument is passed, parameter will be undefined
+}
+example();
+    </code>
+  </pre>
+    </section>
+    <section>
+        <h1>What is REST API?</h1>
+
+        <p>REST (Representational State Transfer) is an architectural style for designing networked applications. REST
+            API, or RESTful API, is a set of rules and conventions for building and interacting with web services
+            following the principles of REST.</p>
+
+        <p>In a REST API:</p>
+
+        <ul>
+            <li><strong>Resources:</strong> Data or services are represented as resources, identified by URLs.</li>
+            <li><strong>HTTP Methods:</strong> Operations on resources are performed using standard HTTP methods, such
+                as GET, POST, PUT, and DELETE.</li>
+            <li><strong>Stateless:</strong> Each request from a client contains all the information needed to understand
+                and process the request. The server does not store the client's state between requests.</li>
+            <li><strong>Representation:</strong> Resources can have multiple representations, such as JSON or XML, and
+                clients can request the representation they prefer.</li>
+        </ul>
+
+        <p>Here is a simple example of a REST API endpoint:</p>
+
+        <pre>
+    <code>
+GET /api/users
+    </code>
+  </pre>
+
+        <p>This endpoint might retrieve a list of users as a response. REST APIs are commonly used in web development to
+            enable communication between different systems and to create scalable and maintainable applications.</p>
+
+        <p>Overall, REST API provides a standardized way for systems to communicate over the web, allowing for
+            interoperability between different applications and services.</p>
+
+    </section>
+</body>
+
+</html>

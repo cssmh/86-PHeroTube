@@ -1,3 +1,7 @@
+function BlogIs () {
+  window.location = "blog.html"
+}
+
 const handleTube = async () => {
   const res = await fetch(
     "https://openapi.programming-hero.com/api/videos/categories"
@@ -54,7 +58,7 @@ const singleOne = async (video) => {
                               </div>
                               <div class="gap-2">
                                   <h2 class="font-bold">${video.title}</h2>
-                                  <div class="flex">
+                                  <div class="flex space-x-1">
                                      <p class="text-gray-600">${video.authors[0]?.profile_name}</p>
                                      <p><img class="w-4" src=${video.authors[0].verified== true ? 'verified.png' : '.'} alt=""></p>
                                   </div>
@@ -67,6 +71,5 @@ const singleOne = async (video) => {
     containerSolo.appendChild(div);
   });
 };
-// w-[20px] mt-[4px]
 singleOne(1000);
 handleTube();
