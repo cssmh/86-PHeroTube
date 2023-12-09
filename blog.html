@@ -108,7 +108,8 @@ function example() {
             <li><strong>Function Parameters:</strong> If a function is called with fewer arguments than declared
                 parameters, the missing parameters will have a value of <code>undefined</code>.</li>
             <li><strong>Object Properties:</strong> If you access an object property that does not exist, the result is
-                <code>undefined</code>.</li>
+                <code>undefined</code>.
+            </li>
         </ul>
 
         <p>Example:</p>
@@ -161,6 +162,39 @@ GET /api/users
             interoperability between different applications and services.</p>
 
     </section>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .active-button {
+      background-color: #ff0000; /* Change this to the desired color */
+    }
+  </style>
+  <title>Button Click Example</title>
+</head>
+<body>
+
+  <button onclick="changeColor(this)">Button 1</button>
+  <button onclick="changeColor(this)">Button 2</button>
+
+  <script>
+    function changeColor(clickedButton) {
+      // Remove the 'active-button' class from all buttons
+      var buttons = document.querySelectorAll('button');
+      buttons.forEach(function(button) {
+        button.classList.remove('active-button');
+      });
+
+      // Add the 'active-button' class to the clicked button
+      clickedButton.classList.add('active-button');
+    }
+  </script>
+
+</body>
+</html>
+
 </body>
 
 </html>
