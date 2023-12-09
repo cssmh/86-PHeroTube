@@ -168,29 +168,37 @@ GET /api/users
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    .active-button {
-      background-color: #ff0000; /* Change this to the desired color */
+    #duration {
+      font-size: 16px;
+      font-weight: bold;
     }
   </style>
-  <title>Button Click Example</title>
 </head>
 <body>
 
-  <button onclick="changeColor(this)">Button 1</button>
-  <button onclick="changeColor(this)">Button 2</button>
+<div id="duration"></div>
 
-  <script>
-    function changeColor(clickedButton) {
-      // Remove the 'active-button' class from all buttons
-      var buttons = document.querySelectorAll('button');
-      buttons.forEach(function(button) {
-        button.classList.remove('active-button');
-      });
+<script>
+  // Function to convert seconds to hours and minutes
+  function secondsToHoursMinutes(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    return { hours, minutes };
+  }
 
-      // Add the 'active-button' class to the clicked button
-      clickedButton.classList.add('active-button');
-    }
-  </script>
+  // Function to update the HTML with the duration
+  function updateDuration(seconds) {
+    const durationContainer = document.getElementById('duration');
+    const { hours, minutes } = secondsToHoursMinutes(seconds);
+    durationContainer.textContent = `Duration: ${hours} hours ${minutes} minutes`;
+  }
+
+  // Example timestamp (Unix timestamp in seconds)
+  const timestamp = 1672656000;
+
+  // Update the HTML with the converted duration
+  updateDuration(timestamp);
+</script>
 
 </body>
 </html>

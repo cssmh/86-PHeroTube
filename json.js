@@ -44,11 +44,18 @@ const singleOne = async (video) => {
   containerSolo.innerHTML = "";
   
   soloData.forEach((video) => {
+    // Hours minutes convert
+    const hoursValue = video.others.posted_date;
+    const getHours = Math.floor(hoursValue / 3600)
+    const min = Math.floor((hoursValue % 3600) / 60);
+    // Hours minutes convert emd
+
     // console.log(video);
     const div = document.createElement("div");
     div.innerHTML = `
       <div class="card card-compact bg-base-100 shadow-xl">
-                        <figure><img class="h-[200px] w-full rounded-md" src="${video.thumbnail}" alt="" /></figure>
+                        <figure><img class="relative h-[200px] w-full rounded-md" src="${video.thumbnail}" alt="" /></figure>
+                         <p class="bg-[#171717] text-white p-2 text-center w-30% absolute bottom-16 mb-9 right-0 m-2 rounded">${getHours}hrs ${min}min ago</p>
                         <div class="card-body">
                             <div class="flex gap-3">
                               <div class="avatar">
