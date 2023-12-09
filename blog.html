@@ -162,47 +162,7 @@ GET /api/users
             interoperability between different applications and services.</p>
 
     </section>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    #duration {
-      font-size: 16px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-
-<div id="duration"></div>
-
-<script>
-  // Function to convert seconds to hours and minutes
-  function secondsToHoursMinutes(seconds) {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    return { hours, minutes };
-  }
-
-  // Function to update the HTML with the duration
-  function updateDuration(seconds) {
-    const durationContainer = document.getElementById('duration');
-    const { hours, minutes } = secondsToHoursMinutes(seconds);
-    durationContainer.textContent = `Duration: ${hours} hours ${minutes} minutes`;
-  }
-
-  // Example timestamp (Unix timestamp in seconds)
-  const timestamp = 1672656000;
-
-  // Update the HTML with the converted duration
-  updateDuration(timestamp);
-</script>
-
-</body>
-</html>
-
+    
 </body>
 
 </html>
