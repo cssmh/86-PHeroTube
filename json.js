@@ -13,7 +13,7 @@ const handleTube = async () => {
   const categoryContainer = document.getElementById("category-container");
   myData.forEach((category) => {
     const div = document.createElement("div");
-    div.classList.add("tabs", "w-1/3", "mx-auto");
+    div.classList.add("tabs", "lg:w-1/3", "mx-auto");
     div.innerHTML = `
     <a onclick="singleOne('${category.category_id}')" role="tab" class="tab bg-gray-300 rounded-lg font-medium hover:bg-red-600 hover:text-white">${category.category}</a>
     `;
@@ -79,5 +79,7 @@ const singleOne = async (video) => {
     containerSolo.appendChild(div);
   });
 };
+// 2nd round complete
+
 singleOne(1000);
 handleTube();
