@@ -8,6 +8,13 @@
     <link rel="icon" href="./fav.png">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .active {
+            color: white;
+            background: #FF1F3D;
+
+        }
+    </style>
 </head>
 
 <body class="max-w-7xl mx-auto mb-14">
@@ -17,7 +24,8 @@
                 <img class="w-3/5 lg:w-auto" src="./Logo.png" alt="">
             </div>
             <div class="navbar-center">
-                <button id="sort-view" onclick="sortView()" class="py-2 px-4 font-medium rounded-md bg-gray-200 text-xs lg:text-lg">Sort by View</button>
+                <button id="sort-view" onclick="sortView(rest)"
+                    class="py-2 px-4 font-medium rounded-md bg-gray-200 text-xs lg:text-lg">Sort by View</button>
             </div>
             <div class="navbar-end">
                 <button onclick="blogIs()" class="btn text-xs md:text-base text-white bg-red-600">Blog</button>
