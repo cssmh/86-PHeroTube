@@ -1,4 +1,4 @@
-var rest = 1000;
+var rest;
 function blogIs() {
   window.location = "blog.html";
 }
@@ -15,7 +15,7 @@ const handleTube = async () => {
     const div = document.createElement("div");
     div.classList.add("tabs", "lg:w-1/3", "mx-auto");
     div.innerHTML = `
-    <a onclick="singleOne('${category.category_id}')"  class="tab rounded-xl border-2 font-medium nav_link">${category.category}</a>
+    <a onclick="singleOne('${category.category_id}')" class="tab rounded-xl border-2 font-medium nav_link">${category.category}</a>
     `;
     categoryContainer.appendChild(div);
   });
@@ -183,7 +183,7 @@ const sortView = async (rest) => {
   const result = sortValue.sort(function (a, b) {
     return parseFloat(b.others.views) - parseFloat(a.others.views);
   });
-  console.log(result);
+  // console.log(result);
 
   displayData(result);
 };
